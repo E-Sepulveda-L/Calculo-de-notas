@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* =================================== Global styles =================================== */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    display: grid;
+    place-items: center;
+    background-color: #cacaca;
+    transition: all 1s;
+}
+:root{
+    --main-color: #5045e5;
+    --box-color: #474f5c5b;
+    --font-color-2: #eeeeee;
+    
+    --scroll-background: #9e9e9eaf;
+    --scroll-thumb-background: #616161ad;
+    --scroll-thumb-background-hover: #232fddad;
+}
+.div-styles{
+    width: 100%;
+    padding: .8rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.data-box{
+    height: 1.7rem;
+    padding: .1rem .5rem 0 .5rem;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    border-bottom: 2px solid var(--main-color);
+    background-color: var(--box-color);
+}
+.data-box::placeholder{
+    color: #dadada;
+}
+.data-box::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.number-data{
+    text-align: center;
+    aspect-ratio: 4/2;
+}
+.string-data{
+    width: 60%;
+}
+h3{
+    display: flex;
+    gap: .5rem;
+    font-size: 14px;
+}
+li{
+    padding: .1rem .2rem;
+    font-size: 13px;
+}
+strong{
+    color: var(--main-color);
+}
+button{
+    padding: .3rem .5rem;
+    font-size: 13px;
+    color: var(--font-color-2);
+    font-weight: 500;
+    letter-spacing: .1px;
+    background-color: var(--main-color);
+    border: 1px solid #6a60f1;
+    border-radius: 3px;
+}
+button:hover{
+    background-color: #5d52f0;
+}
+
+
+/* =================================== main styles =================================== */
+main{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+#scores-builder-container{
+    width: 51rem;
+    height: 20rem;
+    padding: .5rem;
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr ;
+    grid-template-areas: 
+    'scores-controls student-board';
+}
+
+/* _________________________________________ scores-controls  */
+#scores-controls{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: .8rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: scores-controls;
+}
+.calc-method > ul{
+    display: flex;
+    gap: .5rem;
+}
+.calc-method > ul > li:nth-last-child(-n+2){
+    cursor: not-allowed;
+}
+.scores-entry-container{
+    width: fit-content;
+    padding: .3rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: var(--box-color);
+}
+.scores-entry-container > ul{
+    padding: 0 .8rem;
+    display: flex;
+    gap: 2.4rem;
+}
+#scores-inputs{
+    padding: .3rem;
+    display: flex;
+    gap: 2.5rem;
+}
+
+/* _________________________________________ student-board  */
+#student-board{
+    padding: .5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    'student-name student-name'
+    'scores-table-container final-scores-calc-container'
+    'student-control-buttons student-control-buttons';
+    grid-area: student-board;
+    border-radius: 10px;
+    background-color: var(--box-color);
+}
+.student-name{
+    grid-area: student-name;
+}
+.scores-table-container{
+    padding: .5rem;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: var(--box-color);
+    grid-area: scores-table-container;
+}
+#scores-table{
+    width: 100%;
+    height: 10rem;
+    padding: .4rem;
+    overflow-y: scroll;
+    border-radius: 4px;
+    border-bottom: 2px solid var(--main-color);
+    background-color: var(--scroll-background);
+}
+#scores-table::-webkit-scrollbar{
+    width: .5rem;
+    background-color: var(--scroll-background);
+}
+#scores-table::-webkit-scrollbar-thumb{
+    background-color: var(--scroll-thumb-background);
+}
+#scores-table::-webkit-scrollbar-thumb:hover{
+    background-color: var(--scroll-thumb-background-hover);
+}
+.final-scores-calc-container{
+    padding: 1rem;
+    gap: .7rem;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    grid-area: final-scores-calc-container;
+}
+.student-control-buttons{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    grid-area: student-control-buttons;
+}
+
+/* =================================== PDF section styles =================================== */
+#PFD-export-section{
+    width: 100%;
+    height: 100vh;
+    place-items: center;
+    gap: 1rem;
+    display: grid;
+    place-items: center;
+}
+#pdf-container{
+    width: 55rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    'pdf-controls pdf-table-container';
+}
+
+
+/* _________________________________________ pdf-controls  */
+#pdf-controls{
+    width: 15rem;
+    aspect-ratio: 2/2;
+    padding: .5rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    grid-area: pdf-controls;
+}
+#pdf-controls > h3{
+    width: 100%;
+    display: flex;
+    gap: .1rem;
+    flex-direction: column;
+}
+.pdf-filename, .pdf-additional-text{
+    width: 80%;
+    margin: 0 0 0 2rem;
+}
+
+/* _________________________________________ pdf-table-container  */
+#pdf-table-container{
+    height: 30rem;
+    padding: .5rem;
+    overflow-y: scroll;
+    grid-area: pdf-table-container;
+}
+#pdf-table-container::-webkit-scrollbar{
+    width: .5rem;
+    background-color: var(--scroll-background);
+}
+#pdf-table-container::-webkit-scrollbar-thumb{
+    background-color: var(--scroll-thumb-background);
+}
+#pdf-table-container::-webkit-scrollbar-thumb:hover{
+    background-color: var(--scroll-thumb-background-hover);
+}
+table{
+    min-width: 35rem;
+    border-radius: 5px;
+    background-color: var(--box-color);
+}
+th, td{
+    text-align: center;
+    border-radius: 5px;
+    padding: .2rem .2rem;
+}
+td{
+    font-size: 14px;
+}
+tr{
+    background-color: var(--box-color);
+}
+
+/* _________________________________________ footer  */
+footer{
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--box-color);
+}
+footer > ul > li{
+    list-style: disc;
+}
+
+
+
+/* =================================== Darck theme =================================== */
+body.dark-theme{
+    background-color: #111827;
+    color: var(--font-color-2);
+}
+#theme-toggle-button{
+    position: sticky;
+    top: 1rem;
+    z-index: 1;
+}
+
+
+
+
+@media (width < 580px) {
+    #scores-builder-container{
+        width: fit-content;
+        height: fit-content;
+        place-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 
+        'scores-controls' 
+        'student-board';
+    }
+    #student-board{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr auto;
+        grid-template-areas: 
+        'student-name'
+        'scores-table-container'
+        'final-scores-calc-container'
+        'student-control-buttons';
+    }
+    .final-scores-calc-container{
+        padding: 0 30% 0 0;
+    }
+    #pdf-container{
+        width: fit-content;
+        height: fit-content;
+        place-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 
+        'pdf-controls' 
+        'pdf-table-container';
+    }
+    #pdf-table-container{
+        width: 90vw;
+        overflow: scroll;
+    }
+}

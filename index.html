@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="R.png">
+    <link rel="stylesheet" href="styles.css">
+    <title>NOTAS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>    
+</head>
+<body>
+    <button id="theme-toggle-button">Cambiar a Tema Oscuro</button>
+    <main>
+        <section id="scores-builder-container">
+            <section id="scores-controls">
+                <div class="calc-method div-styles">
+                    <h3>Típo de calculo:</h3>
+                    <ul>
+                        <strong><li>Ponderado</li></strong>
+                        <li>Aritmético</li>
+                        <li>Letras</li>
+                    </ul>
+                </div>
+                <div class="scores-entry-container">
+                    <ul>
+                        <li>Nota</li>
+                        <li>Porcentaje</li>
+                    </ul>
+                    <div id="scores-inputs">
+                        <input class="data-box number-data score" placeholder="##" type="number">
+                        <input class="data-box number-data percentage" placeholder="%%" type="number">
+                        <button id="add-score-button">Añadir</button>
+                    </div>
+                </div>
+                <div class="scores-range div-styles">
+                    <h3>Se califica desde:</h3> <input class="data-box number-data" placeholder="##" type="number">
+                    <h3>hasta:</h3> <input class="data-box number-data" placeholder="##" type="number">
+                </div>
+                <div class="scores-min-aprove div-styles">
+                    <h3>Nota minima para aprobar:</h3> <input class="data-box number-data" placeholder="##" type="number">
+                </div>
+            </section>
+            <aside id="student-board">
+                <div class="student-name div-styles">
+                    <h3>Nombre del alumno:</h3> <input type="text" placeholder="(Obligatorio)" class="data-box string-data student-name-input">
+                </div>
+                <div class="scores-table-container div-styles">
+                    <h3>NOTAS</h3>
+                    <div id="scores-table"></div>
+                </div>
+                <div class="final-scores-calc-container div-styles">
+                    <h3>Total notas: <span class="data-box number-data total"></span></h3>
+                    <h3>Promedio: <span class="data-box number-data average"></span></h3>
+                    <h3>Aprovo: <span class="data-box number-data aproved"></span></h3>
+                </div>
+                <div class="student-control-buttons div-styles">
+                    <button class="clear-button">Limpiar</button>
+                    <button class="add-button">Agregar alumno</button>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <section id="PFD-export-section">
+        <section id="pdf-container">
+            <section id="pdf-controls">
+                <h3>Nombre del archivo:<input type="text" class="pdf-filename data-box string-data" placeholder="(sin extensión)"></h3>
+                <h3>Titulo:<input type="text" class="pdf-additional-text data-box string-data" placeholder="Texto adicional"></input></h3>
+                <button id="export-pdf-button">Exportar a PDF</button>
+            </section>
+            <aside id="pdf-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Notas</th>
+                            <th>Promedio</th>
+                            <th>Aprobó</th>
+                            <th>-</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pdf-table-body"></tbody>
+                </table>
+            </aside>
+        </section>
+    </section>
+    <footer>
+        <p>Erick Mateo Sepulveda Lizardo</p>
+        <ul>
+            <li>JENNYFER LORENA DUARTE BERNAL</li>
+            <li>Ingenieria de sistemas</li>
+            <li>3ᵉʳ corte | Proyecto final</li>
+        </ul>
+        <ul>
+            <li>Codigo: 894818</li>
+            <li>NRC: 10-65038</li>
+            <li>UNIMINUTO</li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
