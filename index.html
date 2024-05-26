@@ -18,19 +18,29 @@
                     <h3>Típo de calculo:</h3>
                     <ul>
                         <strong><li>Ponderado</li></strong>
-                        <li>Aritmético</li>
-                        <li>Letras</li>
+                        <strong><li>Aritmético</li></strong>
                     </ul>
                 </div>
-                <div class="scores-entry-container">
-                    <ul>
-                        <li>Nota</li>
-                        <li>Porcentaje</li>
-                    </ul>
-                    <div id="scores-inputs">
-                        <input class="data-box number-data score" placeholder="##" type="number">
-                        <input class="data-box number-data percentage" placeholder="%%" type="number">
-                        <button id="add-score-button">Añadir</button>
+                <div id="scores-entry-container">
+                    <div class="scores-weighted">
+                        <ul>
+                            <li>Nota</li>
+                            <li>Porcentaje</li>
+                        </ul>
+                        <div id="scores-inputs">
+                            <input class="data-box number-data weighted" placeholder="##" type="number">
+                            <input class="data-box number-data percentage" placeholder="%%" type="number">
+                            <button id="add-score-weighted-button">Añadir</button>
+                        </div>
+                    </div>
+                    <div class="scores-arithmetical">
+                        <ul>
+                            <li>Nota</li>
+                        </ul>
+                        <div id="scores-inputs">
+                            <input class="data-box number-data arithmetical" placeholder="##" type="number">
+                            <button id="add-score-arithmetical-button">Añadir</button>
+                        </div>
                     </div>
                 </div>
                 <div class="scores-range div-styles">
@@ -83,6 +93,75 @@
                     <tbody id="pdf-table-body"></tbody>
                 </table>
             </aside>
+        </section>
+    </section>
+    <section id="instructions-section">
+        <section id="user-guide">
+            <h2>Guia de uso</h2>
+        </section>
+        <section id="calc-type">
+            <h2>Tipo de calculo</h2>
+            <section id="aritmetico">
+                <h1 class="titel-2">Aritmetico</h1>
+                <p class="paragraph">El calculo aritmético es el método más facil de cálculo. Se obtiene sumando todas las notas y dividiendo el total entre el número de elementos. Esta fórmula es útil cuando todas las calificaciones tienen el mismo peso/importancia.</p>
+                <h3 class="example-text">Ejemplo</h3>
+                <p class="paragraph">Tenemos las calificaciones de un estudiante: </p>
+                <div class="example">
+                    Tarea: 38 <br>
+                    Taller: 25 <br>
+                    Proyecto: 47 <br>
+                    Examen final: 36
+                </div>
+                <p class="paragraph">El promedio aritmético sería la suma de todos los valores: </p>
+                <div class="example">38 + 25 + 47 + 36 = 146</div>
+                
+                <p class="paragraph">Y ese resultado se divide por la cantidad de valores: </p>
+                <div class="example">146 / 4 = 36.5</div>
+                
+                <p class="paragraph">Ese resultado es el promedio de las notas: </p>
+                <div class="example">36.5</div>
+            </section>
+            <section id="ponderado">
+                <h1 class="titel-2">Ponderado</h1>
+                <p class="paragraph">El promedio ponderado es una medida mas precisa que tiene en cuenta la importancia de cada valor. Se multiplica cada valor por su peso/porcentaje, luego se suman los productos y finalmente se divide por la suma de los pesos. Esta forma es útil cuando hay notas que tienen mayor inportancia que otras.</p>
+                <h3 class="example-text">Ejemplo</h3>
+                <p class="paragraph">Tenemos las notas de un estudiante:</p>
+                <div class="example">
+                    Tarea: 38 <br>
+                    Taller: 25 <br>
+                    Proyecto: 47 <br>
+                    Examen final: 36 <br>
+                </div>
+                
+                <p class="paragraph">Aqui cada una de las notas tiene una importancia/peso/porcentaje distinta que afecta a la calificacion final:</p>
+                <div class="example">
+                    Tarea: 38 vale: 10% <br>
+                    Taller: 25 vale: 10% <br>
+                    Proyecto: 47 vale: 30% <br>
+                    Examen final: 36 vale: 50% <br>
+                </div>
+
+                <p class="paragraph">Cada nota se multiplica por su peso y se suman los resultados:</p>
+                <div class="example">
+                    38 * 10 = 380 <br>
+                    25 * 10 = 250 <br>
+                    47 * 30 = 1410 <br>
+                    36 * 50 = 1800 <br>
+                    <br>
+                    380 + 250 + 1410 + 1800 = 3840
+                </div>
+
+                <p class="paragraph">Por ultimo ese resultado se divide por la suma de todos los porcentajes:</p>
+                <div class="example">
+                    10 + 10 + 30 + 50 = 100 <br>
+                    <br>
+                    3840 / 100 = 38.4
+                </div>
+
+                <p class="paragraph">Y esa seria la nota final:</p>
+                <div class="example">38.4</div>
+
+            </section>
         </section>
     </section>
     <footer>

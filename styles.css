@@ -69,6 +69,9 @@ li{
 strong{
     color: var(--main-color);
 }
+strong:hover{
+    color: #111827;
+}
 button{
     padding: .3rem .5rem;
     font-size: 13px;
@@ -119,10 +122,13 @@ main{
     display: flex;
     gap: .5rem;
 }
-.calc-method > ul > li:nth-last-child(-n+2){
-    cursor: not-allowed;
+#scores-entry-container{
+    width: 17rem;
+    display: flex;
+    gap: 5rem;
+    overflow: hidden;
 }
-.scores-entry-container{
+.scores-weighted, .scores-arithmetical{
     width: fit-content;
     padding: .3rem;
     display: flex;
@@ -130,7 +136,12 @@ main{
     border-radius: 5px;
     background-color: var(--box-color);
 }
-.scores-entry-container > ul{
+.scores-weighted > ul{
+    padding: 0 .8rem;
+    display: flex;
+    gap: 2.4rem;
+}
+.scores-arithmetical > ul{
     padding: 0 .8rem;
     display: flex;
     gap: 2.4rem;
@@ -274,6 +285,57 @@ td{
 }
 tr{
     background-color: var(--box-color);
+}
+
+/* =================================== instructions secction =================================== */
+
+#instructions-section{
+    width: clamp(50rem, 70vw, 60rem);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    'user-guide calc-type';
+}
+
+/* _________________________________________ user-guide  */
+#user-guide{
+    grid-area: user-guide;
+}
+/* _________________________________________ calc-type   */
+#calc-type{
+    margin: 0 0 10% 0;
+    padding: 0 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    grid-area: calc-type;
+    border-left: 1px solid var(--box-color);
+}
+#aritmetico, #ponderado{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.titel-2{
+    margin-left: 1rem;
+    color: var(--main-color);
+}
+.example-text{
+    margin-left: 1.5rem;
+}
+.paragraph{
+    margin-left: 2rem;
+    font-size: 14px;
+}
+.example{
+    width: fit-content;
+    padding: .2rem.4rem;
+    margin-left: 2rem;
+    font-size: 13px;
+    border-radius: 3px;
+    color: aliceblue;
+    background-color: rgb(36 36 36 / 1);
 }
 
 /* _________________________________________ footer  */
