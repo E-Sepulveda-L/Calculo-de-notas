@@ -423,4 +423,31 @@ body.dark-theme{
         width: 90vw;
         overflow: scroll;
     }
+    #instructions-section{
+        margin-bottom: 6%;
+        width: 90%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        'user-guide'
+        'calc-type';
+    }
+    #user-guide{
+        padding-right: 1rem;
+    }
+    #calc-type{
+        padding: 5rem 0 5% 0;
+        border-left: none;
+        border-top: 1px solid var(--box-color);
+    }
+    footer{
+        padding: 1rem;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        font-size: 12px;
+    }
+    footer > p{
+        font-size: 14px;
+        margin: 0 2rem;
+    }
 }
