@@ -43,13 +43,11 @@ function addScore(type) {
         ? parseFloat(document.querySelector('.percentage').value)
         : 100;
 
-    // Validar si la nota contiene puntos o comas
     if (nota.toString().includes('.') || nota.toString().includes(',')) {
         alert('Las notas no pueden contener puntos o comas.');
         return;
     }
 
-    // Validar rango de notas
     let rangoDesde = parseFloat(document.querySelector('.scores-range input:nth-child(2)').value);
     let rangoHasta = parseFloat(document.querySelector('.scores-range input:nth-child(4)').value);
 
@@ -108,6 +106,7 @@ function actualizarResultados() {
     let totalNotas = notasDivs.length;
     let sumaNotas = 0;
     let sumaPorcentajes = 0;
+    let notasArray = [];
 
     notasDivs.forEach(div => {
         let nota = parseFloat(div.children[0].innerText);
@@ -119,6 +118,8 @@ function actualizarResultados() {
         } else {
             sumaNotas += nota;
         }
+
+        notasArray.push(nota);
     });
 
     let promedio = currentCalculationType === 'ponderado' 
@@ -130,10 +131,13 @@ function actualizarResultados() {
     document.querySelector('.total').innerText = totalNotas;
     document.querySelector('.average').innerText = promedio.toFixed(2);
     document.querySelector('.aproved').innerText = promedio >= notaMinimaAprobacion ? 'Sí' : 'No';
+    
+    document.querySelector('.total').dataset.notas = notasArray.join(', ');
 }
 
 document.querySelector('.clear-button').addEventListener('click', function() {
     document.getElementById('scores-table').innerHTML = '';
+    document.querySelector('.student-name-input').value = '';
     actualizarResultados();
 });
 
@@ -144,7 +148,7 @@ document.querySelector('.add-button').addEventListener('click', function() {
         return;
     }
 
-    const total = document.querySelector('.total').innerText;
+    const notas = document.querySelector('.total').dataset.notas;
     const average = document.querySelector('.average').innerText;
     const aproved = document.querySelector('.aproved').innerText;
 
@@ -152,7 +156,7 @@ document.querySelector('.add-button').addEventListener('click', function() {
 
     let row = pdfTableBody.insertRow();
     row.insertCell(0).innerText = studentName;
-    row.insertCell(1).innerText = total;
+    row.insertCell(1).innerText = notas;
     row.insertCell(2).innerText = average;
     row.insertCell(3).innerText = aproved;
 
@@ -176,10 +180,6 @@ document.querySelector('.add-button').addEventListener('click', function() {
     });
 
     row.insertCell(4).appendChild(deleteButton);
-
-    document.getElementById('scores-table').innerHTML = '';
-    document.querySelector('.student-name-input').value = '';
-    actualizarResultados();
 });
 
 document.getElementById('export-pdf-button').addEventListener('click', function() {
