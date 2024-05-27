@@ -57,6 +57,9 @@ body{
 .string-data{
     width: 60%;
 }
+h1{
+    font-size: 16px;
+}
 h3{
     display: flex;
     gap: .5rem;
@@ -290,6 +293,7 @@ tr{
 /* =================================== instructions secction =================================== */
 
 #instructions-section{
+    margin-bottom: 6%;
     width: clamp(50rem, 70vw, 60rem);
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -300,11 +304,25 @@ tr{
 
 /* _________________________________________ user-guide  */
 #user-guide{
+    padding-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
     grid-area: user-guide;
+}
+#user-guide > h2{
+    margin-bottom: 3rem;
+}
+#user-guide > p{
+    font-size: 13px;
+    margin-bottom: 1rem;
+}
+.paragraph > strong{
+    color: black;
 }
 /* _________________________________________ calc-type   */
 #calc-type{
-    margin: 0 0 10% 0;
+    margin-bottom: 5%;
     padding: 0 0 0 1rem;
     display: flex;
     flex-direction: column;
@@ -326,7 +344,7 @@ tr{
 }
 .paragraph{
     margin-left: 2rem;
-    font-size: 14px;
+    font-size: 13px;
 }
 .example{
     width: fit-content;
@@ -355,14 +373,14 @@ footer > ul > li{
 
 
 /* =================================== Darck theme =================================== */
-body.dark-theme{
-    background-color: #111827;
-    color: var(--font-color-2);
-}
 #theme-toggle-button{
     position: sticky;
     top: 1rem;
     z-index: 1;
+}
+body.dark-theme{
+    background-color: #111827;
+    color: var(--font-color-2);
 }
 
 
