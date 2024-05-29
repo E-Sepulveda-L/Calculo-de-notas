@@ -65,6 +65,7 @@ function addScore(type) {
     nuevoDiv.style.marginBottom = '2px';
     nuevoDiv.style.borderRadius = '5px';
     nuevoDiv.style.backgroundColor = 'rgba(53, 53, 53, 0.148)';
+    nuevoDiv.style.color = '#000000';
 
     let notaH1 = document.createElement('h1');
     notaH1.innerText = nota;
