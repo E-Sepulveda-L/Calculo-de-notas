@@ -87,9 +87,6 @@ button{
 button:hover{
     background-color: #5d52f0;
 }
-input{
-    color: var(--font-color-2);
-}
 
 
 /* =================================== main styles =================================== */
@@ -319,6 +316,41 @@ tr{
 }
 
 /* _________________________________________ user-guide  */
+#note{
+    width: 23rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(253, 253, 97, 0.185);
+    border: 2px solid #ffc14d;
+    border-radius: 10px;
+}
+#note > h1{
+    color: red;
+}
+.note-div{
+    height: 1.7rem;
+    aspect-ratio: 2/1;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    border-bottom: 2px solid var(--main-color);
+    background-color: rgba(255, 74, 74, 0.63);
+}
+#note-data-e{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+#note-data-e > div:nth-last-child(1){
+    background-color: #47ff5fb4;
+}
 #user-guide{
     padding-right: 3rem;
     display: flex;
@@ -351,7 +383,7 @@ tr{
     flex-direction: column;
     gap: 1rem;
 }
-.titel-2{
+.title-2{
     margin-left: 1rem;
     color: var(--main-color);
 }
