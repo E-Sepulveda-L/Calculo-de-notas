@@ -250,7 +250,7 @@ main{
 #pdf-controls{
     width: 15rem;
     aspect-ratio: 2/2;
-    padding: .5rem;
+    padding: .5rem .5rem .5rem 1.5rem;
     display: flex;
     gap: 1rem;
     flex-direction: column;
@@ -287,7 +287,7 @@ main{
     background-color: var(--main-color);
 }
 table{
-    min-width: 35rem;
+    width: clamp(35rem, 100%, 100%);
     border-radius: 5px;
     background-color: var(--box-color);
 }
@@ -466,6 +466,9 @@ body.dark-theme{
         grid-template-areas: 
         'pdf-controls' 
         'pdf-table-container';
+    }
+    #pdf-controls{
+        padding: .5rem;
     }
     #pdf-table-container{
         width: 90vw;
