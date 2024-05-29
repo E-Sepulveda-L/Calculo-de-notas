@@ -22,9 +22,7 @@ body{
     --box-color: #474f5c5b;
     --font-color-2: #eeeeee;
     
-    --scroll-background: #9e9e9eaf;
-    --scroll-thumb-background: #616161ad;
-    --scroll-thumb-background-hover: #232fddad;
+    --scroll-background: #cacaca;
 }
 .div-styles{
     width: 100%;
@@ -88,6 +86,9 @@ button{
 }
 button:hover{
     background-color: #5d52f0;
+}
+input{
+    color: var(--font-color-2);
 }
 
 
@@ -209,10 +210,10 @@ main{
     background-color: var(--scroll-background);
 }
 #scores-table::-webkit-scrollbar-thumb{
-    background-color: var(--scroll-thumb-background);
+    background-color: var(--box-color);
 }
 #scores-table::-webkit-scrollbar-thumb:hover{
-    background-color: var(--scroll-thumb-background-hover);
+    background-color: var(--main-color);
 }
 .final-scores-calc-container{
     padding: 1rem;
@@ -283,10 +284,10 @@ main{
     background-color: var(--scroll-background);
 }
 #pdf-table-container::-webkit-scrollbar-thumb{
-    background-color: var(--scroll-thumb-background);
+    background-color: var(--box-color);
 }
 #pdf-table-container::-webkit-scrollbar-thumb:hover{
-    background-color: var(--scroll-thumb-background-hover);
+    background-color: var(--main-color);
 }
 table{
     min-width: 35rem;
