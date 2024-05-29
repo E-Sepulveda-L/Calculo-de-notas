@@ -9,6 +9,7 @@
     box-sizing: border-box;
     user-select: none;
     font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 body{
     display: grid;
@@ -97,7 +98,21 @@ main{
     display: grid;
     place-content: center;
 }
-
+#how{
+    width: fit-content;
+    padding: .3rem;
+    font-size: 13px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 2px solid #ffa600;
+    color: var(--font-color-2);
+    background-color: var(--main-color);
+    transition: all .3s;
+    scroll-behavior: smooth;
+}
+#how:hover{
+    background-color: #ffa600;
+}
 #scores-builder-container{
     width: 51rem;
     height: 20rem;
